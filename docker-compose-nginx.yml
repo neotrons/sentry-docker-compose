@@ -1,0 +1,22 @@
+version: '3'
+services:
+  sentry:
+    container_name: sentry
+    image: sentry
+    env_file:
+      - ./envs/sentry.env
+    ports:
+      - '9000'
+    expose:
+      - '9000'
+    depends_on:
+      - db
+      - redis
+    tty: true
+    stdin_open: true
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./data/nginx:/etc/nginx/conf.d

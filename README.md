@@ -1,8 +1,9 @@
 ![Sentry](https://sentry-brand.storage.googleapis.com/sentry-logo-black.png)]
-# sentry-docker-compose 
-Permite orquestar y deplegar Sentry On-Premise con docker-compose 
 
-* [sentry - Docker Hub](https://hub.docker.com/_/sentry/)
+# sentry-docker-compose 
+
+Permite orquestar y desplegar Sentry On-Premise con docker-compose utilizando los contenedores disponibles en
+[Docker Hub](https://hub.docker.com/_/sentry/)
 
 ## Desplegar una instancia completa con docker-compose.yml
 
@@ -49,3 +50,12 @@ $ docker-compose up -d
 ```
 
 Abrir el navegador en `http://localhost:9000`
+
+
+### Iniciar con nginx
+
+```
+$ docker-compose -f docker-compose.yml -f docker-compose-nginx.yml up -d
+```
+
+Abrir el navegador en `http://localhost`
